@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+  public:
+   int key;
+   Node *left;
+   Node *right;
+   Node *parent;
+};
+
+
+Node* findInOrderSuccessor( Node *inputNode ){
+    //Complete this Method, return the pointer to the inorder successor
+    // HINT : Since the parent pointer is given, you can traverse upwards in the tree
+    //traversing to parent
+    Node* target = inputNode;
+    if(inputNode->parent){
+        inputNode = inputNode->parent;
+    }
+    
+    if(inputNode->parent==NULL){
+        Node*root = inputNode;
+    }
+
+    
+}
+
+int main(){
+
+}
