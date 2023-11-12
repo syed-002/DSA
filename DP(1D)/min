@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+long long minimumCost(vector<int> a, int k){
+    //Write your code here. Do not modify the function or the parameters. Use a helper function if needed.
+    
+     vector<long long>dp(a.size());
+
+    dp[0] = 0;
+    dp[1] = abs(a[0]-a[1]);
+
+    for(int i=2; i<a.size(); i++){
+        
+        
+        long long val = INT_MAX;
+       for(int j=1; j<=k; j++){
+           val = min( val, (dp[i-j]+ abs(a[i]-a[j])) );
+       }
+        dp[i] = val;
+
+    }
+
+    return dp[a.size() - 1];
+    
+    
+}
